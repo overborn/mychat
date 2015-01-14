@@ -1,0 +1,10 @@
+<ul class="nav nav-list">
+    {% if channels %}
+        {% for channel in channels %}
+        <li>
+        <a href="{{ url_for('channel', id = channel.id) }}"> {{ channel.name }} </a></li>
+        {% endfor %}
+    {% else %}
+        <li>There are no channels present.</li>
+    {% endif %}
+</ul>

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Log In{% endblock %}
+
+{% block part %}
+<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+<li class="active"><a href="">Sign In</a></li>
+{% endblock %}
+
+{% block content %}
+
+
+<h3>Sign In</h3>
+<form class="form" action="" method="post" name="login">
+    {{form.hidden_tag()}}
+    <table align="center">
+    <tr><td>{{form.username(class = "span4", placeholder="Username")}}</td></tr>
+    <tr><td>{{form.password(class = "span4", placeholder="Password")}}</td></tr>
+    </table>
+        {% for error in form.errors.username %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>    
+
+    <div class="control-group">
+            <div class="controls">
+                <input class="btn btn-lg btn-default" type="submit" value="Sign In">
+            </div>
+        </div>
+</form>
+{% endblock %}

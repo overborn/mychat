@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+
+{% block part %}
+<li class="active"><a href="#">Sign Up</a></li>
+<li><a href="{{ url_for('login') }}">Sign In</a></li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="inner cover">
+      <h1 class="cover-heading">Register your account</h1>
+      <!-- <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p> -->
+      <form class="form" action="" method="post" name="login" id="passwordTest">
+        {{form.hidden_tag()}}
+      <table align="center">
+      <p class="lead">
+      <tr>
+        <td>{{form.username(class = "span4", placeholder="username")}}</td></tr>
+      <tr>
+      <td>{{form.password(class = "span4", id="password1", placeholder="password")}}</td></tr>
+      <tr>
+      <td>{{form.confirm(class = "span4", id="password2", placeholder="confirm")}}</td></tr>
+      <div id="pass-info"></div>
+      </table>
+      <script type="text/javascript" src="/static/js/pass_strength.js"></script>
+
+          {% for error in form.errors.username %}
+          <span style="color: red;">[{{error}}]</span>
+          {% endfor %}<br>    
+
+      <div class="control-group">
+              <div class="controls">
+                  <input class="btn btn-lg btn-default" type="submit" value="Sign Up">
+              </div>
+          </div>
+      </p>
+      </form>
+    </div>
+    
+{% endblock %}

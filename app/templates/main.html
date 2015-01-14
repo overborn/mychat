@@ -1,0 +1,21 @@
+{% extends "base2.html" %}
+{% block title %}Main page{% endblock %}
+
+{% block content %}
+<h3>Create a new channel</h3>
+
+<form class="form" action="" method="post" name="login">
+    {{form.hidden_tag()}}
+    {{form.name(class="form-control", placeholder="name of channel")}}    
+        {% for error in form.errors.username %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>    
+
+    <div class="control-group">
+            <div class="controls">
+                <input class="btn btn-lg btn-default" type="submit" value="create">
+            </div>
+        </div>
+</form>
+
+{% endblock %}
