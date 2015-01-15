@@ -44,4 +44,5 @@ Temporary Items
 
 activate.cmd
 tmp
-flask
+flask/
+*.pyc
